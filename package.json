@@ -1,0 +1,16 @@
+{
+  "name": "stoa",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": ["frontend", "backend", "packages/*"],
+  "scripts": {
+    "dev": "npm run dev --workspace=@stoa/frontend",
+    "build": "npm run build --workspace=@stoa/frontend",
+    "start": "npm run start --workspace=@stoa/frontend",
+    "prepare:standalone": "node scripts/prepare-standalone.mjs",
+    "start:standalone": "node frontend/.next/standalone/frontend/server.js",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present"
+  },
+  "engines": { "node": ">=20.9.0" }
+}
