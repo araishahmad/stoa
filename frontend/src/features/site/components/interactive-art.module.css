@@ -1,0 +1,32 @@
+.frame {
+  position: relative;
+  display: grid;
+  perspective: 1000px;
+}
+
+.art {
+  position: relative;
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  transform-origin: center;
+}
+
+.art > :first-child { display: block; width: 100%; height: 100%; }
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .art { transition: transform .5s cubic-bezier(.22, 1, .36, 1); }
+  .frame[data-active="true"] .art {
+    transform: rotateX(var(--art-rotate-x, 0deg)) rotateY(var(--art-rotate-y, 0deg)) scale(1.025);
+    transition-duration: .12s;
+    transition-timing-function: linear;
+    will-change: transform;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .frame { perspective: none; }
+  .art { transform: none; transition: none; }
+}
