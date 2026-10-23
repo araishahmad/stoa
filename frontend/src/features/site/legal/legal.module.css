@@ -1,0 +1,18 @@
+.layout { display: grid; grid-template-columns: 220px minmax(0, 740px); gap: 85px; margin: 75px auto 90px; }
+.navigation { display: flex; flex-direction: column; align-items: flex-start; gap: 15px; padding-top: 10px; }
+.navigation > svg { width: 28px; height: 28px; color: var(--color-accent); margin-bottom: 6px; }
+.navigation p { font-family: var(--font-display); font-weight: 700; font-size: 23px; letter-spacing: -.035em; line-height: 1.2; margin: 0 0 16px; max-width: 180px; }
+.navigation a { color: var(--color-muted); font-size: 13px; padding: 5px 0; }
+.navigation a[aria-current] { color: var(--color-accent); font-weight: 700; text-decoration: underline; text-underline-offset: 6px; }
+.document h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(43px, 5.8vw, 72px); letter-spacing: -.06em; margin: 21px 0; line-height: 1.05; }
+.description { font-size: 16px; line-height: 1.75; color: var(--color-muted); max-width: 600px; }
+.date { font-size: 11px; color: var(--color-muted); margin: 23px 0 28px; }
+.notice { border-radius: 12px; padding: 22px 25px; background: var(--color-mint); margin-bottom: 38px; }
+.notice strong { font-size: 13px; }
+.notice p { font-size: 12px; line-height: 1.8; margin: 8px 0 0; }
+.section + .section { margin-top: 36px; }
+.section h2 { font-family: var(--font-display); font-size: 27px; font-weight: 700; line-height: 1.2; letter-spacing: -.035em; margin: 0 0 16px; }
+.section p { font-size: 14px; line-height: 1.95; color: var(--color-muted); margin: 0 0 16px; }
+.related { display: flex; flex-wrap: wrap; gap: 30px; border-top: 1px solid var(--color-line); padding-top: 28px; margin-top: 38px; }
+@media (max-width: 900px) { .layout { grid-template-columns: 170px minmax(0, 1fr); gap: 40px; } }
+@media (max-width: 650px) { .layout { display: flex; flex-direction: column; gap: 30px; margin: 35px auto 55px; } .navigation { flex-direction: row; flex-wrap: wrap; gap: 24px; padding: 0 0 16px; border-bottom: 1px solid var(--color-line); } .navigation > svg, .navigation p { display: none; } .navigation a { font-size: 12px; } .document h1 { margin-top: 20px; } .section h2 { font-size: 26px; } .notice { padding: 18px; } }

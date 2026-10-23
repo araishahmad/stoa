@@ -1,0 +1,47 @@
+.header { margin: 70px 0 55px; max-width: 1000px; }
+.header h1 { font-family: var(--font-display); font-size: clamp(43px, 6.2vw, 82px); font-weight: 700; letter-spacing: -.065em; line-height: 1.04; margin: 23px 0; }
+.header > p:last-child { max-width: 520px; font-size: 16px; line-height: 1.8; color: var(--color-muted); }
+.layout { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); align-items: start; gap: 90px; margin-bottom: 90px; }
+.introduction { padding-top: 24px; border-top: 2px solid var(--color-ink); }
+.introduction > h2 { font-family: var(--font-display); font-size: 30px; letter-spacing: -.04em; font-weight: 700; margin: 0 0 15px; }
+.introduction > p { font-size: 14px; color: var(--color-muted); line-height: 1.85; }
+.reasons { margin: 30px 0; }
+.reasons > div { display: flex; align-items: flex-start; gap: 17px; margin: 25px 0; }
+.reasons > div > svg { width: 20px; height: 20px; margin-top: 2px; flex-shrink: 0; color: var(--color-accent); }
+.reasons h3 { font-size: 13px; font-weight: 600; margin: 0 0 7px; }
+.reasons p { color: var(--color-muted); font-size: 12px; line-height: 1.8; margin: 0; max-width: 280px; }
+.previewNote { border-top: 1px solid var(--color-line); padding-top: 25px; margin-top: 32px; }
+.previewNote strong { font-size: 12px; }
+.previewNote p { color: var(--color-muted); font-size: 12px; line-height: 1.85; margin: 10px 0 19px; }
+.previewNote a { font-size: 11px; }
+.formPanel { background: var(--color-mint); border-radius: 18px; padding: 35px; min-width: 0; }
+.formHeading { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.formHeading h2 { font-family: var(--font-display); font-size: 28px; font-weight: 700; letter-spacing: -.045em; margin: 0; }
+.formNote { font-size: 12px; line-height: 1.8; color: var(--color-muted); margin: 12px 0 28px; }
+.fieldRow { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.field { margin-bottom: 23px; min-width: 0; }
+.field label { display: block; font-size: 12px; font-weight: 700; margin-bottom: 9px; }
+.field input, .field select, .field textarea { width: 100%; background: var(--color-surface); border: 1px solid var(--color-line); padding: 12px 13px; font-family: inherit; font-size: 13px; border-radius: 7px; color: var(--color-ink); }
+.field input, .field select { min-height: 44px; }
+.field textarea { resize: vertical; min-height: 155px; line-height: 1.75; }
+.field input::placeholder, .field textarea::placeholder { color: var(--color-muted); }
+.field input[aria-invalid="true"], .field textarea[aria-invalid="true"] { border-color: var(--color-ink); border-width: 2px; }
+.messageLabel { display: flex; justify-content: space-between; gap: 20px; }
+.messageLabel > span { font-size: 10px; color: var(--color-muted); }
+.fieldError { margin: 8px 0 0; font-size: 11px; line-height: 1.6; color: var(--color-ink); }
+.acknowledgement { display: flex; align-items: flex-start; gap: 10px; font-size: 11px; line-height: 1.75; color: var(--color-muted); cursor: pointer; }
+.acknowledgement input { margin-top: 3px; width: 16px; height: 16px; flex-shrink: 0; accent-color: var(--color-accent); }
+.submit { width: 100%; margin-top: 23px; display: flex; justify-content: center; }
+.bottomNote { text-align: center; color: var(--color-muted); font-size: 10px; line-height: 1.8; margin: 14px 0 0; }
+.honeypot { display: none; }
+.success { padding: 40px 3px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.successIcon { display: grid; place-items: center; width: 62px; height: 62px; background: var(--color-accent); color: var(--color-surface); border-radius: 16px; margin-bottom: 22px; }
+.successIcon svg { width: 28px; height: 28px; }
+.success h2 { font-family: var(--font-display); font-size: 38px; font-weight: 700; letter-spacing: -.05em; line-height: 1.1; margin: 22px 0 15px; }
+.success p { font-size: 13px; line-height: 1.85; color: var(--color-muted); max-width: 360px; margin: 0 0 28px; }
+@media (max-width: 1000px) { .layout { gap: 45px; } .formPanel { padding: 28px; } .fieldRow { grid-template-columns: 1fr; gap: 0; } }
+@media (max-width: 700px) { .header { margin: 43px 0 35px; } .header > p:last-child { font-size: 15px; } .layout { grid-template-columns: 1fr; gap: 35px; margin-bottom: 55px; } .formPanel { padding: 24px; } .formHeading h2 { font-size: 27px; } .reasons p { max-width: none; } .introduction { padding-top: 0; } .formHeading { gap: 10px; } }
+@media (max-width: 760px), (pointer: coarse) {
+  .field input, .field select, .field textarea { font-size: 16px; min-width: 0; }
+  .acknowledgement { min-height: 44px; }
+}
