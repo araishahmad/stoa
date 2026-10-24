@@ -13,5 +13,6 @@ export const siteConfig = {
   name: "Stoa",
   description: "Fresh perspectives on technology, relationships, and culture. Stoa is a place to explore how we live, connect, and make sense of a changing world.",
   url: resolveSiteUrl(configuredUrl),
+  preferredSourceEnabled: process.env.GOOGLE_PREFERRED_SOURCE_ENABLED === "true",
   isPreview: true,
 } as const;

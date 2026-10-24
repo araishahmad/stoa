@@ -1,5 +1,43 @@
 # Static preview verification
 
+## Preferred Source follow-up — 23 October 2026
+
+Added a shared, server-rendered Google Preferred Source promotion to the public
+footer and article endings. The default state is an explicitly disabled preview.
+The live deeplink requires an approved HTTPS `SITE_URL` and the explicit
+`GOOGLE_PREFERRED_SOURCE_ENABLED=true` build setting. No Google script or remote
+badge asset is loaded, and no indexing rules were changed.
+
+Validation for this follow-up:
+
+- Lint and TypeScript passed; the final isolated production build generated
+  29 pages successfully.
+- The production handler passed 17/17 existing route checks, including preview
+  noindex and no response cookies.
+- 16/16 additional server-rendered placement/privacy checks passed: one badge
+  on homepage/journal, two on articles, none in admin; default controls are
+  disabled and no live Google preference link or SDK resource is emitted.
+- 41/41 temporary helper/configuration/component checks passed. They covered
+  active and inactive variants, valid domains/subdomains, local/reserved/IP
+  and trailing-dot hosts, origin validation, exact activation-flag behavior,
+  hostname-only query construction, new-tab disclosure, and referrer suppression.
+  A trailing-dot reserved-host bypass found during review was corrected before
+  the final run.
+- Browser visual review could not start: the computer-use tool returned
+  `Sky Computer Use native pipe startup failed`. These checks do not establish
+  browser rendering or live Google eligibility. No account preferences changed.
+
+The disposable `out/preferred-source-check/` build and evidence were removed
+after verification. Product source and the existing development build were
+preserved; type generation's incidental next-env.d.ts change was restored.
+
+Search Console ownership is not configured in this codebase, and external DNS
+verification was not inspected. Domain verification, Google source eligibility
+and approved removal of public noindex remain launch tasks, documented in
+`docs/launch-checklist.md`.
+
+## Editorial refresh checkpoint
+
 Verification checkpoint on 23 October 2026 for the eight-image Gen Z editorial
 refresh, animated hero, interactive artwork, topic ribbon and scroll composition.
 The final production build and regression checks include the follow-up focus,

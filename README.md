@@ -109,6 +109,22 @@ canonical origin is approved; no canonical hostname is invented. Providing a
 site URL does not remove the preview's `noindex`. There is no placeholder
 `ads.txt`, fabricated publisher ID or production sitemap.
 
+The footer and article endings include a Google Preferred Source promotion.
+It renders as an explicitly inactive preview until the approved HTTPS `SITE_URL`
+is configured and `GOOGLE_PREFERRED_SOURCE_ENABLED=true` is set at build time.
+Only enable it after the domain is available in Google's source preferences
+tool and the real site is approved for launch. Local, reserved and IP addresses
+do not produce a live link. The active control uses Google's documented domain
+deeplink and opens a new tab without a referrer. It loads no Google script,
+remote badge image, cookies or storage; readers choose their preferences on
+Google. It does not automatically subscribe a reader or certify the site.
+
+Preferred Sources personalizes Google Search for readers who select the site;
+adding this control is not a general ranking or AI-citation guarantee. See the
+[official publisher guide](https://developers.google.com/search/docs/appearance/preferred-sources).
+The current `noindex` preview is not eligible for Search or AI citations merely
+because this UI is present.
+
 ## Structure
 
 ```text

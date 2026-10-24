@@ -91,6 +91,14 @@ Sources: [Google consent requirements](https://support.google.com/adsense/answer
   needs a fabricated domain or placeholder production content now.
 - [ ] Verify Search Console ownership and submit the real sitemap. Check live
   HTML, indexing signals and status codes after deployment.
+- [ ] Confirm the approved domain/subdomain appears in Google's
+  [source preferences tool](https://www.google.com/preferences/source) and is
+  included in Search generative AI features in Search Console where applicable.
+  After launch approval, set `GOOGLE_PREFERRED_SOURCE_ENABLED=true` alongside
+  the approved HTTPS `SITE_URL` and rebuild. Verify both Preferred Source links
+  point to that domain and let the reader confirm the selection on Google.
+  This promotion is not endorsement or a general ranking guarantee; see
+  [Google's publisher documentation](https://developers.google.com/search/docs/appearance/preferred-sources).
 - [ ] Run the [VPS verification steps](vps-deployment.md), mobile accessibility
   checks, a production-build performance check and post-launch monitoring.
 - [ ] Rebuild after the final content and design changes. Run

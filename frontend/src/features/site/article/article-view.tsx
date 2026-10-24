@@ -4,6 +4,7 @@ import { LuArrowLeft, LuArrowUpRight, LuChevronRight, LuClock3 } from "react-ico
 import { SiteContainer } from "@/components/layout/site-container";
 import { editorialByline, formatStoryDate, stories } from "@/features/site/stories/data";
 import type { Story } from "@/features/site/stories/types";
+import { PreferredSource } from "@/features/site/preferred-source/preferred-source";
 import { CopyArticleLink } from "./copy-article-link";
 import styles from "./article.module.css";
 
@@ -68,6 +69,7 @@ export function ArticleView({ story }: { story: Story }) {
               <strong>A note on this preview</strong>
               <p>This original, AI-assisted demonstration story shows the reading experience. The byline and publication date are sample labels. A person must review and approve the content and supply an accountable author before publication.</p>
             </aside>
+            <PreferredSource variant="article" />
             <Link className={`text-link ${styles.backLink}`} href="/blog"><LuArrowLeft aria-hidden="true" />Back to the journal</Link>
           </div>
         </div>
